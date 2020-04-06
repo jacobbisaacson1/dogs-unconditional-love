@@ -1,7 +1,36 @@
 <%- include('../partials/header.ejs') %>
 
-
 	<h2>Add Dogs</h2>
+
+	<form method="POST" action="/dogs/new">
+		<fieldset>
+			<div>
+				<label for="name">Name:</label>
+				<input 
+				type="text" 
+				name="name" 
+				id="name"
+				placeholder="Enter dogs name">
+			</div>
+			<div>
+				<label for="age">Age:</label>
+				<input 
+				type="number" 
+				name="age" 
+				id="age"
+				placeholder="Enter dogs age">
+			</div>
+			<div>
+				<label for="breed">Breed:</label>
+				<input 
+				type="text" 
+				name="breed" 
+				id="breed"
+				placeholder="Enter dogs breed">
+			</div>
+		</fieldset>
+		<button>Add Dog</button>
+	</form>
 
 <%- include('../dogs/nav.ejs') %>	
 

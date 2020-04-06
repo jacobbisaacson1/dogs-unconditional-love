@@ -1,5 +1,14 @@
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+const PORT = process.env.PORT
+
+require('./db/db')
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 const dogController = require('./controllers/dogController')
@@ -12,7 +21,7 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log("server running on 3000");
 })
 
