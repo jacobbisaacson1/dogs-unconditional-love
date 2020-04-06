@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
-	
-<h3>Sign up here</h3>
+
+  <h3>Sign up here</h3>
 
   <p><%= message %></p>
 
@@ -32,6 +32,22 @@
       <button>Sign up!</button>
     </fieldset>
   </form>
+
+
+  <script type="text/javascript">
+    console.log('hello')
+    // stretch: validate password with client-side JS
+    // make sure it meets some criteria 
+    // certain # of chars, 
+    // numbers and letters
+    // require a special characcter
+    // require upper and lowercase
+    // play with regex
+    // hints -- add an event listener to the form
+    // if the password is no good, then prevent default
+    // and add a message to the page saying here's why your pw sucks
+    // and (bonus!) highlight the field in red or something
+  </script>
 
 
 <%- include('../partials/footer.ejs') %>

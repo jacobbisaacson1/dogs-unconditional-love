@@ -1,0 +1,11 @@
+  
+body {
+  background-color: pink;
+  font-family: Georgia;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

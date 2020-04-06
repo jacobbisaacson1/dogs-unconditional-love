@@ -1,0 +1,52 @@
+<%- include('./partials/header.ejs') %>
+
+  <h3>When we last checked, your mood was <%= currentMood %>.</h3>
+  
+  <h3>How are you feeling?</h3>
+
+  <div style="width: 300px">
+    <img style="width: 100%" src="https://scifanatic-wpengine.netdna-ssl.com/wp-content/uploads/2016/09/hollow_pursuits_hd_258-777x437.jpg" alt="troi">
+  </div>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="great">
+    <button>Great!! 😃</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="good">
+    <button>Good! 😊</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="fine">
+    <button>Fine. 🙂</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="okay">
+    <button>Okay.. 😐</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="so so">
+    <button>So-so. 😕</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="hanging in there">
+    <button>Hanging in there. 🙁</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="not so great">
+    <button>Not so great. ☹️</button>
+  </form>
+
+  <form method="POST" action="/mood">
+    <input type="hidden" name="moodChoice" value="terrible">
+    <button>Terrible. 😫</button>
+  </form>
+
+
+<%- include('./partials/footer.ejs') %>

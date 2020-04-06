@@ -1,8 +1,18 @@
 <%- include('./partials/header.ejs') %>
 
+  <h3>Welcome to the Dog App!</h3>
+ 	 <div style="width: 300px">
+ 		<img style="width: 100%" src="https://i.imgur.com/IHHFL6F.jpg" />
+ 	 </div>
 
-	<h2>Home</h2>
-	
+  <%
+    if(currentMood !== undefined) {
+      %>
+        <p>You were most recently feeling: <%= currentMood %></p>
+      <% 
+    }
+  %>
 
+  <%= message %>
 
 <%- include('./partials/footer.ejs') %>

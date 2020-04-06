@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs') %>
+
+  <%- include('./nav.ejs') %>
+
+  <h3>Show page for <%= dog.name %></h3>
+
+  <p>
+    <%= dog.name %> is a <%= dog.age %> year old <%= dog.breed %> that belongs to <%= dog.user.username %>.
+  </p>
+
+<%- include('../partials/footer.ejs') %>

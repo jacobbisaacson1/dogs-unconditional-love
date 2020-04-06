@@ -1,37 +1,27 @@
 <%- include('../partials/header.ejs') %>
-<%- include('../dogs/nav.ejs') %>	
 
-	<h2>Add Dogs</h2>
+  <%- include('./nav.ejs') %>
 
-	<form method="POST" action="/dogs/new">
-		<fieldset>
-			<div>
-				<label for="name">Name:</label>
-				<input 
-				type="text" 
-				name="name" 
-				id="name"
-				placeholder="Enter dogs name">
-			</div>
-			<div>
-				<label for="age">Age:</label>
-				<input 
-				type="number" 
-				name="age" 
-				id="age"
-				placeholder="Enter dogs age">
-			</div>
-			<div>
-				<label for="breed">Breed:</label>
-				<input 
-				type="text" 
-				name="breed" 
-				id="breed"
-				placeholder="Enter dogs breed">
-			</div>
-		</fieldset>
-		<button>Add Dog</button>
-	</form>
+  <h3>Add a dog</h3>
 
+  <form method="POST" action="/dogs">
+    <fieldset>
+      <legend>Enter a new dog here</legend>
+      <div>
+        <label for="name"></label>
+        <input type="text" name="name" id="name" placeholder="Enter dog's name" />
+      </div>
+      <div>
+        <label for="age"></label>
+        <input type="number" name="age" id="age" placeholder="Enter dog's age" />
+      </div>
+      <div>
+        <label for="breed"></label>
+        <input type="text" name="breed" id="breed" placeholder="Enter dog's breed" />
+      </div>
+      <button>Add the dog! WOOF</button>
+
+    </fieldset>
+  </form>
 
 <%- include('../partials/footer.ejs') %>

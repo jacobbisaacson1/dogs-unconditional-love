@@ -1,19 +1,13 @@
 <%- include('../partials/header.ejs') %>
 
-  <%- include('./nav.ejs') %>
+  <%- include('../dogs/nav.ejs') %>
 
-  <h3>All the dogs</h3>
+  <h3>All the dogs for user: <%= user.username %></h3>
 
   <ul>
     <% dogs.forEach((dog) => { %>
       <li>
         <a href="/dogs/<%= dog.id %>"><%= dog.name %></a>
-        (
-          owner: 
-          <a href="/users/<%= dog.user.id %>/dogs">
-            <%= dog.user.username %>            
-          </a>
-        )
       </li>
     <% }) %>    
   </ul>
