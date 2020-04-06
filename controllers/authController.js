@@ -12,35 +12,35 @@ router.get('/register', (req, res) => {
 	})
 })
 
-router.post('./register', async	(req, res, next) => {
-	try {
-		console.log(req.body);
-		const desiredUsername: req.body.username
-		const desiredPassword: req.body.password
-		const userWithThisUsername = await User.findOne({
-			username: desiredUsername
-		})
-		console.log(userWithThisUsername);
-	if(userWithThisUsername) {
-		req.session.message = `Username ${desiredUsername} taken`
-		res.redirect('/auth/register')
-	} else {
-		const salt = bcrypt.genSaltSync(10)
-		const hashedPassword = bcrypt.hashSync(desiredPassword, salt)
-		const createdUser = await User.create({
-			username: desiredUsername,
-			password: desiredPassword
-		})
-		req.session.loggedIn = true
-		req.session.userId = createUser._id
-		req.session.username = createdUser.username
-		req.session.message = 'Thanks for signing up, ${createdUser.username}'
-		res.redirect('/')
-		}
-	} catch(err) {
-		next(err)
-	}
-})
+// router.post('./register', async	(req, res, next) => {
+// 	try {
+// 		console.log(req.body);
+// 		const desiredUsername: req.body.username
+// 		const desiredPassword: req.body.password
+// 		const userWithThisUsername = await User.findOne({
+// 			username: desiredUsername
+// 		})
+// 		console.log(userWithThisUsername);
+// 	if(userWithThisUsername) {
+// 		req.session.message = `Username ${desiredUsername} taken`
+// 		res.redirect('/auth/register')
+// 	} else {
+// 		const salt = bcrypt.genSaltSync(10)
+// 		const hashedPassword = bcrypt.hashSync(desiredPassword, salt)
+// 		const createdUser = await User.create({
+// 			username: desiredUsername,
+// 			password: desiredPassword
+// 		})
+// 		req.session.loggedIn = true
+// 		req.session.userId = createUser._id
+// 		req.session.username = createdUser.username
+// 		req.session.message = 'Thanks for signing up, ${createdUser.username}'
+// 		res.redirect('/')
+// 		}
+// 	} catch(err) {
+// 		next(err)
+// 	}
+// })
 
 
 module.exports = router
