@@ -3,6 +3,21 @@
 
 	<h2>All the dogs</h2>
 
+	<ul>
+		<% foundDogs.forEach((dog) => { %>
+		<li>
+			<div>
+				<strong>
+					<a href="/dogs/<% dog.id %>">
+						<%= dog.name %>
+					</a>
+				</strong>
+			</div>
+		</li>
+			
+		<% }) %>
+	</ul>
+
 <%- include('../dogs/nav.ejs') %>	
 
 

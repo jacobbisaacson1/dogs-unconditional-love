@@ -3,8 +3,16 @@ const router = express.Router()
 const Dog = require('../models/dog.js')
 
 
-router.get('/', (req, res) => {
-	res.render('dogs/index.ejs')
+router.get('/', async (req, res, next) => {
+	try {
+		const foundDogs = await Dog.find({})
+		console.log(foundDogs);
+		res.render('dogs/index.ejs', {
+			foundDogs: foundDogs
+		})
+	} catch(err) {
+		next(err)
+	}
 })
 
 router.get('/new', (req, res) => {
