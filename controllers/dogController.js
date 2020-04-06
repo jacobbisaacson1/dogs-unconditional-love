@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Dog = require('../models/dog.js')
+const User = require('../models/user.js')
 
 
 router.get('/', async (req, res, next) => {
